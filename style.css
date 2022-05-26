@@ -8,6 +8,13 @@
   box-sizing: border-box;
 }
 
+:root {
+  --background-color: #20222f;
+  --font-color: #ffffff;
+  --background-card: #252b42;
+  --background-dark-mode: linear-gradient(225deg, #40db82 0%, #388fe7 98.02%);
+}
+
 html {
   font-size: 62.5%;
 }
@@ -18,7 +25,7 @@ body {
   font-weight: 700;
   line-height: 17px;
   letter-spacing: 0px;
-  background-color: #20222f;
+  background-color: var(--background-color);
   padding: 35px 150px;
   display: flex;
   flex-direction: column;
@@ -40,7 +47,7 @@ header h1 {
   line-height: 34px;
   letter-spacing: 0px;
   text-align: center;
-  color: #fff;
+  color: var(--font-color);
   margin-bottom: 5px;
 }
 
@@ -57,7 +64,7 @@ header .dark-mode label {
   display: inline-block;
   width: 50px;
   height: 24px;
-  background: linear-gradient(225deg, #40db82 0%, #388fe7 98.02%);
+  background: var(--background-dark-mode);
   border-radius: 12px;
   position: relative;
 }
@@ -98,7 +105,7 @@ main {
 main .box-content {
   min-width: 255px;
   min-height: 216px;
-  background: #252b42;
+  background: var(--background-card);
   border-radius: 5px;
   border-top: 4px solid #178ff5;
   display: flex;
@@ -112,6 +119,17 @@ main .box-content .social {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+.wrapper {
+  background: linear-gradient(225deg, #df4896 0%, #ee877e 50.91%, #fdc366 100%);
+  padding: 3px 0px 0px;
+  border-radius: 6px;
+}
+
+.wrapper .box-content {
+  border-top: none;
+  border-bottom: 2px solid var(--background-card);
 }
 
 main .box-content a {
@@ -139,7 +157,7 @@ main .box-content .number h3 {
   line-height: 48px;
   letter-spacing: -2px;
   text-align: center;
-  color: #fff;
+  color: var(--font-color);
   margin-top: 30px;
 }
 
@@ -173,7 +191,7 @@ section {
 }
 
 section h2 {
-  color: #fff;
+  color: var(--font-color);
   font-size: 24px;
   font-weight: 700;
   line-height: 29px;
@@ -191,7 +209,7 @@ section .overviews-container {
 }
 
 section .overview {
-  background: #252b42;
+  background: var(--background-card);
   border-radius: 5px;
   width: 255px;
   height: 125px;
@@ -220,10 +238,42 @@ section .stats-row {
 }
 
 section .stats-row h3 {
-  color: #fff;
+  color: var(--font-color);
   font-size: 32px;
   font-weight: 700;
   line-height: 39px;
   letter-spacing: 0px;
   text-align: left;
+}
+
+@media only screen and (max-width: 1200px) {
+  main {
+    justify-content: center;
+  }
+
+  section .overviews-container {
+    justify-content: center;
+  }
+
+  section h2 {
+    display: flex;
+    justify-content: center;
+  }
+
+  body {
+    padding: 35px 25px;
+  }
+
+  header {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  header .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
 }
